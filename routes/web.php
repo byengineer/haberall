@@ -16,10 +16,20 @@ Route::get('/', function () {
 });
 
 Route::group(['middleware' => 'auth'], function () {
-    Route::get('/app', 'App\AppController@init');
+    Route::get('/dashboard', 'App\AppController@init');
+    Route::get('/app/profile', 'App\ProfileController@init');
+    Route::resource('/app/setting','App\SettingController');
 
 
 });
 Auth::routes();
 
 Route::get('/home', 'HomeController@index');
+
+
+Route::group(['prefix' => 'api',  'middleware' => 'auth'], function()
+{
+        Route::resource('/profile', 'Api\ProfileController');
+        Route::resource('/getResource', 'Api\GetResourceController');
+
+});
