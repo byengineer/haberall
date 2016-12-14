@@ -10,6 +10,7 @@
     <script src="js/vendor/core/jquery.js"></script>
     <title>HaberAll App | Dashboard</title>
     <meta id="token" name="token" value="{{ csrf_token() }}">
+    <script src="js/app/jquery.bxslider.min.js"></script>
 
     <!-- Vendor CSS BUNDLE
     Includes styling for all of the 3rd party libraries used with this module, such as Bootstrap, Font Awesome and others.
@@ -354,16 +355,6 @@ but ALL the modules are 100% compatible -->
 
 <script src="js/app/main.js"></script>
 
-<script src="js/app/jquery.bxslider.min.js"></script>
-
-<script>
-    $(document).ready(function(){
-        $('#anasayfa_slider').bxSlider({
-            pager: false
-        });
-
-    });
-</script>
 
 
 

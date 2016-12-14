@@ -24,7 +24,7 @@
                                       <div class="panel-heading">
 
                                           <label for="@{{ items.id }}">
-                                              <img src="@{{ items.url }}" class="img-responsive">
+                                              <img src="@{{ items.logo_url }}" class="img-responsive" style="max-height:75px;">
                                           </label>
 
                                       </div>

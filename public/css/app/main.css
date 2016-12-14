@@ -386,7 +386,6 @@ body > .container + .bg-white {
     width: 100%;
 }
 
-
 .box-item .box-post span.meta {
     font-family:  sans-serif;
     font-size: 12px;
@@ -396,9 +395,12 @@ body > .container + .bg-white {
 }
 
 .box-item .box-post span.meta span {
-    margin-right: 15px;
-}
 
+}
+.box-item a{color: #fff;}
+.box-item{
+
+}
 .box-item .box-post {
     position: absolute;
     left: 0;

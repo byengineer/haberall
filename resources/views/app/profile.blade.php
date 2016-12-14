@@ -1,13 +1,10 @@
 @extends('app.applayout')
-
 @section('content')
-
 <div class="row" ng-app="profile">
     <div class="col-md-8">
         <div class="page-section third">
             <!-- Tabbable Widget -->
             <div class="tabbable paper-shadow relative" data-z="0.5">
-
                 <!-- Tabs -->
                 <ul class="nav nav-tabs">
                     <li class="active"><a href="app-student-profile.html"><i class="fa fa-fw fa-lock"></i> <span class="hidden-sm hidden-xs">Manage Account</span></a></li>
