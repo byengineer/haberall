@@ -129,32 +129,8 @@
                             <li><a href="app-student-course.html">Course Details</a></li>
                         </ul>
                     </li>
-                    <li class="dropdown">
-                        <a href="app-instructor-dashboard.html#" class="dropdown-toggle" data-toggle="dropdown">Student <span class="caret"></span></a>
-                        <ul class="dropdown-menu">
-                            <li><a href="app-student-dashboard.html">Dashboard</a></li>
-                            <li><a href="app-student-courses.html">My Courses</a></li>
-                            <li><a href="app-take-course.html">Take Course</a></li>
-                            <li><a href="app-course-forums.html">Course Forums</a></li>
-                            <li><a href="app-take-quiz.html">Take Quiz</a></li>
-                            <li><a href="app-student-profile.html">Edit Profile</a></li>
-                            <li><a href="app-student-billing.html">Edit Billing</a></li>
-                            <li><a href="app-student-messages.html">Messages</a></li>
-                        </ul>
-                    </li>
-                    <li class="dropdown active">
-                        <a href="app-instructor-dashboard.html#" class="dropdown-toggle" data-toggle="dropdown">Instructor <span class="caret"></span></a>
-                        <ul class="dropdown-menu">
-                            <li class="active"><a href="app-instructor-dashboard.html">Kontrol Paneli</a></li>
-                            <li><a href="app-instructor-courses.html">Profilim</a></li>
-                            <li><a href="app-instructor-course-edit-course.html">Ayarlar</a></li>
-                            <li><a href="app-instructor-earnings.html">Earnings</a></li>
-                            <li><a href="app-instructor-statement.html">Statement</a></li>
-                            <li><a href="app-instructor-profile.html">Edit Profile</a></li>
-                            <li><a href="app-instructor-billing.html">Edit Billing</a></li>
-                            <li><a href="app-instructor-messages.html">Messages</a></li>
-                        </ul>
-                    </li>
+
+
                 </ul>
                 <ul class="nav navbar-nav navbar-nav-bordered navbar-right">
                     <!-- notifications -->
@@ -241,9 +217,9 @@
             <ul class="sidebar-menu">
                 <li  class="active"><a href="/dashboard"><i class="fa fa-home"></i><span>Kontrol Paneli</span></a></li>
                 <li ><a href="app/profile"><i class="fa fa-paper-plane"></i><span>Profilim</span></a></li>
-                <li ><a href="app-instructor-courses.html"><i class="fa fa-mortar-board"></i><span>Ayarlar</span></a></li>
+                <li ><a href="app/setting"><i class="fa fa-mortar-board"></i><span>Ayarlar</span></a></li>
 
-                <li><a href="app-instructor-dashboard.html#"><i class="fa fa-sign-out"></i><span>Çıkış</span></a></li>
+                <li><a href="logout"><i class="fa fa-sign-out"></i><span>Çıkış</span></a></li>
             </ul>
         </div>
     </div>

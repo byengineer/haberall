@@ -4,9 +4,11 @@ angular.module('profile', [])
         i = false;
         $http.get('api/profile').
         then(function(response) {
-            $scope.profile = response.data.data;
+            $scope.profile = response.data.data[0];
             $("#loading").hide();
             $scope.profile.formpath="api/profile/"+$scope.profile.id;
+            console.log(response.data.data);
+
 
         });
     });

@@ -32,5 +32,6 @@ Route::group(['prefix' => 'api',  'middleware' => 'auth'], function()
         Route::resource('/profile', 'Api\ProfileController');
         Route::resource('/getResource', 'Api\GetResourceController');
         Route::get('/news', 'Api\NewsController@init');
+        Route::get('/yazarlar', 'Api\NewsController@yazarlar');
 
 });

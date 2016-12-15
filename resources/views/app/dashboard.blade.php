@@ -38,8 +38,51 @@
                         </div>
                         <!-- manset haberler bitiş-->
                         <div class="col-md-4">
-                            Yazar Listesi
-                        </div>
+                            <div class="tabbable tabs-vertical tabs-left">
+                                <!-- Tabs -->
+
+                                <ul class="nav nav-tabs" tabindex="6" style="overflow: hidden; outline: none;">
+                                    @foreach($resources as $key => $list)
+                                    <li class="@if($key==0) active @endif"><a href="/dashboard#{{$list->sname}}" data-toggle="tab" aria-expanded="false">{{$list->name}}</a></li>
+                                    @endforeach
+                                </ul>
+                                <!-- // END Tabs -->
+
+                                <!-- Panes -->
+                                <div class="tab-content">
+                                    @foreach($resources as $key => $list)
+                                        <div id="{{$list->sname}}" class="tab-pane @if($key==0) active @endif" >
+
+                                            <div class="list-group-item media v-middle">
+                                                <div class="media-left">
+                                                    <div class="icon-block half img-circle bg-primary">
+                                                        <i class="fa fa-credit-card"></i>
+                                                    </div>
+                                                </div>
+                                                <div class="media-body">
+                                                    <h4 class="text-title media-heading">
+                                                        <a href="" data-toggle="modal" class="link-text-color">Ülkeyi kurtaracak 5 madde</a>
+                                                    </h4>
+                                                    <div class="text-caption">Sözcü Gazetesi</div>
+                                                </div>
+                                            </div>
+
+                                        </div>
+                                    @endforeach
+
+
+                                    </div>
+
+                                </div>
+                                <!-- // END Panes -->
+
+                            </div>
+
+
+
+
+
+
                     </div>
 
                     <div class="row" ng-controller="NewsController"  style="margin-top: 20px">
