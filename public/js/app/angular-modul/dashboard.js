@@ -1,4 +1,4 @@
-var app = angular.module('dashboard', []);
+var app = angular.module('dashboard',[]);
 
 app.controller('sliderController', function($scope, $http) {
     $http({
@@ -11,8 +11,6 @@ app.controller('sliderController', function($scope, $http) {
         console.log(response.data.responseData.feed.entries[0].mediaGroups[0].contents[0].url);
 
     });
-
-
 }).directive('bxSlider', [function () {
     return {
         restrict: 'A',
@@ -38,6 +36,8 @@ app.controller('sliderController', function($scope, $http) {
     }]);
 
 
+
+
 app.controller('NewsController', function ($scope,$http) {
 
     $http.get('api/news').
@@ -48,4 +48,20 @@ app.controller('NewsController', function ($scope,$http) {
 
     });
 });
+
+app.controller('YazarController', function ($scope,$http) {
+
+    $scope.abc = function (url) {
+        console.log(url);
+        alert(url);
+        $scope.name=url;
+    }
+
+
+
+
+});
+
+
+
 

@@ -47,25 +47,27 @@
                                     @endforeach
                                 </ul>
                                 <!-- // END Tabs -->
-
-                                <!-- Panes -->
-                                <div class="tab-content">
+                          <!-- Panes -->
+                                <div class="tab-content" style="max-height: 398px;overflow-y: scroll;" >
                                     @foreach($resources as $key => $list)
                                         <div id="{{$list->sname}}" class="tab-pane @if($key==0) active @endif" >
+                                           @php
+                                           $yazar_listesi = $AppController::getYazar($list->yazar_url);
+                                           @endphp
+                                            @foreach($yazar_listesi[0]->responseData->feed->entries as $i => $y_list)
 
                                             <div class="list-group-item media v-middle">
-                                                <div class="media-left">
-                                                    <div class="icon-block half img-circle bg-primary">
-                                                        <i class="fa fa-credit-card"></i>
-                                                    </div>
-                                                </div>
-                                                <div class="media-body">
-                                                    <h4 class="text-title media-heading">
-                                                        <a href="" data-toggle="modal" class="link-text-color">Ülkeyi kurtaracak 5 madde</a>
+                                                <div class="media-body" >
+                                                    <h4 class="text-title" style="font-size:1.1em">
+                                                        <a href="{{$y_list->link}}"  class="link-text-color">{{$y_list->title}}</a>
                                                     </h4>
-                                                    <div class="text-caption">Sözcü Gazetesi</div>
+                                                </div>
+                                                <div class="media-right">
+                                                    <button class="yazarModal btn btn-primary btn-xs" data-toggle="modal" data-target="#yazarModal" data-url="{{$y_list->link}}">Oku</button>
                                                 </div>
                                             </div>
+                                                @endforeach
+
 
                                         </div>
                                     @endforeach
@@ -75,8 +77,38 @@
 
                                 </div>
                                 <!-- // END Panes -->
+                            <!-- Modal -->
+                            <div id="yazarModal" class="modal fade" role="dialog" style="z-index: 99999999999999">
+                                <div class="modal-dialog modal-lg">
+
+                                    <!-- Modal content-->
+                                    <div class="modal-content">
+                                        <div class="modal-header">
+                                            <button type="button" class="close" data-dismiss="modal">&times;</button>
+                                            <h4 class="modal-title">Yazar oku</h4>
+                                        </div>
+                                        <div class="modal-body" id="yazarBody">
+
+                                        </div>
+                                        <div class="modal-footer">
+                                            <button type="button" class="btn btn-danger" data-dismiss="modal">Kapat</button>
+                                        </div>
+                                    </div>
+
+                                </div>
+                            </div>
 
                             </div>
+
+                        <script>
+                            $(".yazarModal").click(function () {
+                                var src = $(this).attr("data-url");
+                                var h_yazar = $(this).height();
+                                var test = "<iframe src='"+src+"' style='border:0;width: 100%;height:600px;'></iframe >";
+alert("lkjasdlkjsadkljsda"+src);
+                                $("#yazarBody").html(test);
+                            });
+                        </script>
 
 
 
@@ -122,7 +154,7 @@
                     <div class="media v-middle">
                         <div class="media-body">
                             <h4 class="text-headline margin-none">Para Durumu</h4>
-                            <p class="text-subhead text-light">This Month</p>
+                            <p class="text-subhead text-light">@{{ali}}</p>
                         </div>
                         <div class="media-right">
                             <a class="btn btn-white btn-flat" href="app-instructor-earnings.html">Reports</a>
@@ -330,7 +362,6 @@
             src="https://cdnjs.cloudflare.com/ajax/libs/toastr.js/latest/js/toastr.min.js"></script>
     <link href="//cdnjs.cloudflare.com/ajax/libs/toastr.js/latest/css/toastr.min.css" rel="stylesheet">
     <script src="https://ajax.googleapis.com/ajax/libs/angularjs/1.4.3/angular.min.js"></script>
-    <scrpit src="https://raw.githubusercontent.com/BinaryMuse/ngInfiniteScroll/1.0.0/build/ng-infinite-scroll.min.js"></scrpit>
     <script src="js/app/angular-modul/dashboard.js"></script>
 
 
