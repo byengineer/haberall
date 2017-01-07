@@ -207,7 +207,7 @@
             <div class="sidebar-block">
                 <div class="profile">
                     <a href="app-instructor-dashboard.html#">
-                        <img src="images/people/110/guy-6.jpg" alt="people" class="img-circle width-80"/>
+                        <img src="{{ asset('images/avatar/'.$avatar_url->avatar) }}" alt="people" class="img-circle width-80"/>
                     </a>
                     <h4 class="text-display-1 margin-none">Memedov</h4>
                 </div>
@@ -230,6 +230,20 @@
         <div class="st-content">
             <div class="st-content-inner padding-none">
                 <div class="container-fluid">
+                    @if(count($errors))
+                            @foreach($errors->all() as $error)
+                            <div class="alert alert-danger">
+                                {{ $error }}
+                            </div>
+
+                        @endforeach
+                    @endif
+                    @if (session('success'))
+                            <div class="alert alert-success">
+                                {{ session('success') }}
+                            </div>
+                        @endif
+
 @yield('content')
                 </div>
             </div>

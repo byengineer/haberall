@@ -19,7 +19,7 @@ Route::group(['middleware' => 'auth'], function () {
     Route::get('/dashboard', 'App\AppController@init');
     Route::get('/app/profile', 'App\ProfileController@init');
     Route::resource('/app/setting','App\SettingController');
-
+    Route::post('/profile/image-save', 'App\ProfileController@resimKaydet');
 
 });
 Auth::routes();

@@ -3,8 +3,10 @@
 namespace App\Http\Controllers\App;
 
 use App\Http\Controllers\Api\NewsController;
+use App\User;
 use Illuminate\Http\Request;
 use App\Http\Controllers\Controller;
+use Illuminate\Support\Facades\Auth;
 use Illuminate\Support\Facades\DB;
 
 class AppController extends Controller
@@ -13,7 +15,7 @@ class AppController extends Controller
     protected function init()
     {
         $data = DB::table('resources')->get();
-
+        $user = User::where("id",Auth::user()->id);
 
         return view('app.dashboard', ['resources' => $data, 'AppController'=> new AppController()]);
     }

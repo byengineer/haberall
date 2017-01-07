@@ -23,16 +23,6 @@
                                     <input type="hidden" name="_method" value="PUT">
 
 
-                                    <div class="media v-middle">
-                                        <div class="media-left">
-                                            <div class="icon-block width-100 bg-grey-100">
-                                                <i class="fa fa-photo text-light"></i>
-                                            </div>
-                                        </div>
-                                        <div class="media-body">
-                                            <input type="file" class="btn btn-white btn-sm paper-shadow relative" data-z="0.5" data-hover-z="1" data-animated> Add Image<i class="fa fa-upl"></i></input>
-                                        </div>
-                                    </div>
                                 </div>
                             </div>
                             <div class="form-group">
@@ -76,6 +66,24 @@
                                 </div>
                             </div>
                         </form>
+
+                 <form action="profile/image-save" method="post" enctype="multipart/form-data">
+                     {{ csrf_field() }}
+                     <div class="media v-middle">
+                         <div class="media-left">
+                             <div class="icon-block width-100 bg-grey-100">
+                                 <i class="fa fa-photo text-light"></i>
+                             </div>
+                         </div>
+                         <div class="media-body">
+                             <input type="file" name="profile-image" class="btn btn-white btn-sm paper-shadow relative" data-z="0.5" data-hover-z="1" data-animated><i class="fa fa-upl"></i></input>
+
+                         </div>
+
+                         <button class="btn btn-success margin-v-4-2">Kaydet</button>
+                     </div>
+                 </form>
+
                     </div>
 
 

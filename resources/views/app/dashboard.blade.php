@@ -105,7 +105,6 @@
                                 var src = $(this).attr("data-url");
                                 var h_yazar = $(this).height();
                                 var test = "<iframe src='"+src+"' style='border:0;width: 100%;height:600px;'></iframe >";
-alert("lkjasdlkjsadkljsda"+src);
                                 $("#yazarBody").html(test);
                             });
                         </script>
