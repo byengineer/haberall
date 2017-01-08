@@ -120,26 +120,50 @@
                         <div id='newsLoading'><img src="images/loading.gif"></div>
                         <div id="newContent" style="display:none;">
                             <div class="col-md-4" data-ng-repeat="(key,items) in news">
-                                <div class="box-item" style="background-color: #fff;margin-bottom: 20px">
+                                <div class="box-item" ng-click="haberModalOpen(items.link)" data-toggle="modal" data-target="#haberModal"    style="background-color: #fff;margin-bottom: 20px">
                                     <div class="box-post">
                                     <span class="label label-success">
                                         <a href="#" rel="tag">@{{ items.categories[0] }}</a>
                                     </span>
                                         <h1 class="post-title">
-                                            <a href="#">
+                                            <a href="#" class="haber-k1">
                                                 @{{ items.title }}
                                             </a>
                                         </h1>
 
                                     </div>
-                                    <img src="@{{ items.mediaGroups[0].contents[0].url }}" style="width: 370px;height: 250px"
+                                    <img src="@{{ items.mediaGroups[0].contents[0].url }}"  style="width: 370px;height: 250px"
                                          alt="City in the sky: world's biggest hotel to open in Mecca"
-                                         class="img-responsive">
+                                         class="img-responsive haber-k1">
                                 </div>
                             </div>
                         </div>
 
                     </div>
+
+                    <!-- Modal -->
+                    <div id="haberModal" class="modal fade" role="dialog" style="z-index: 99999999999999">
+                        <div class="modal-dialog modal-lg" style="width: 75%">
+
+                            <!-- Modal content-->
+                            <div class="modal-content">
+                                <div class="modal-header">
+                                    <button type="button" class="close" data-dismiss="modal">&times;</button>
+                                    <h4 class="modal-title">Haber oku</h4>
+                                </div>
+                                <div class="modal-body" id="haberBody">
+
+                                </div>
+                                <div class="modal-footer">
+                                    <button type="button" class="btn btn-danger" data-dismiss="modal">Kapat</button>
+                                </div>
+                            </div>
+
+                        </div>
+                    </div>
+
+
+
                 </div>
 
 
@@ -153,7 +177,7 @@
                     <div class="media v-middle">
                         <div class="media-body">
                             <h4 class="text-headline margin-none">Para Durumu</h4>
-                            <p class="text-subhead text-light">@{{ali}}</p>
+                            <p class="text-subhead text-light"></p>
                         </div>
                         <div class="media-right">
                             <a class="btn btn-white btn-flat" href="app-instructor-earnings.html">Reports</a>
@@ -161,7 +185,7 @@
                     </div>
                 </div>
                 <div class="panel-body">
-                    <div id="para-durum">
+                    <div id="para-durum" ng-controller="dovizController">
                         <div class="box">
 
                             <table>
@@ -169,9 +193,8 @@
                                     <td style="width: 35px"><i class="fa fa-usd fa-2x"> </i></td>
                                     <td>
                                         <span class="text-default">  DOLAR</span>
-                                        3.42347
-                                        <span class="text-default">%0.5454 <i
-                                                    class="fa fa-caret-down fa-lg text-danger"></i></span>
+                                        @{{dolar}}
+                                        <span class="text-default">%@{{dolar_change}}</span>
 
                                     </td>
                                 </tr>
@@ -184,9 +207,8 @@
                                     <td style="width: 35px"><i class="fa fa-euro fa-2x"> </i></td>
                                     <td>
                                         <span class="text-default">  Euro</span>
-                                        3.42347
-                                        <span class="text-default">%0.5454 <i
-                                                    class="fa fa-caret-up fa-lg text-success"></i></span>
+                                        @{{euro}}
+                                        <span class="text-default">%@{{euro_change}} </span>
 
                                     </td>
                                 </tr>
@@ -199,29 +221,22 @@
                                     <td>
                                         <span class="text-default">  Elazığ</span>
 
-                                        <span class="text-default">%0.5454 <i
-                                                    class="fa fa-caret-up fa-lg text-success"></i></span>
+                                        <span class="text-default">%0.5454</span>
 
                                     </td>
                                 </tr>
                             </table>
                         </div>
                         <div class="clearfix"></div>
+                        Kontrol sayısı : @{{ kontrolsayisi }}
                     </div>
                 </div>
                 <hr/>
+                
                 <div class="panel-body">
-                    <div class="row text-center">
-                        <div class="col-md-6">
-                            <h4 class="margin-none">Gross Revenue</h4>
-                            <p class="text-display-1 text-warning margin-none">102.4k</p>
-                        </div>
-                        <div class="col-md-6">
-                            <h4 class="margin-none">Net Revenue</h4>
-                            <p class="text-display-1 text-success margin-none">55k</p>
-                        </div>
-                    </div>
+                    <iframe src="http://grafik.doviz.com/android/C/USD/minute" style="border: 0" scrolling="no" width="100%" frameborder="0"></iframe>
                 </div>
+
             </div>
 
 

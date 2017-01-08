@@ -184,13 +184,15 @@
                     <!-- User -->
                     <li class="dropdown">
                         <a href="app-instructor-dashboard.html#" class="dropdown-toggle user" data-toggle="dropdown">
-                            <img src="images/people/110/guy-5.jpg" alt="Bill" class="img-circle" width="40"/>
+                            <img src="{{ asset('images/avatar/'.$profile->avatar) }}" alt="Bill" class="img-circle" width="40"/>
                             Bill <span class="caret"></span>
                         </a>
+                        <form name="logout" action="{{ url::to('logout') }}" method="post">
+                            {{ csrf_field() }}
+                            </form>
                         <ul class="dropdown-menu" role="menu">
-                            <li><a href="app-student-profile.html">Account</a></li>
-                            <li><a href="app-student-billing.html">Billing</a></li>
-                            <li><a href="login.html">Logout</a></li>
+
+                            <li><a onclick="logout.submit()">Çıkış</a></li>
                         </ul>
                     </li>
                 </ul>
@@ -207,9 +209,9 @@
             <div class="sidebar-block">
                 <div class="profile">
                     <a href="app-instructor-dashboard.html#">
-                        <img src="{{ asset('images/avatar/'.$avatar_url->avatar) }}" alt="people" class="img-circle width-80"/>
+                        <img src="{{ asset('images/avatar/'.$profile->avatar) }}" alt="people" class="img-circle width-80"/>
                     </a>
-                    <h4 class="text-display-1 margin-none">Memedov</h4>
+                    <h4 class="text-display-1 margin-none">{{$profile->name}}</h4>
                 </div>
             </div>
 

@@ -15,11 +15,15 @@ class AppServiceProvider extends ServiceProvider
      */
     public function boot()
     {
-        view()->composer('*', function($view)
-        {
-            $view->with('avatar_url', User::where('id',Auth::user()->id)->first());
+            view()->composer('*', function($view)
+            {
+                if (!Auth::guest()) {
 
-        });
+                    $view->with('profile', User::where('id', Auth::user()->id)->first());
+                }
+
+            });
+
     }
 
     /**

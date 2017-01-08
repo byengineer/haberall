@@ -54,7 +54,7 @@
                                 <label for="inputPassword3" class="col-md-2 control-label">Change Password</label>
                                 <div class="col-md-6">
                                     <div class="form-control-material">
-                                        <input type="password" class="form-control" id="inputPassword3" placeholder="Password">
+                                        <input type="password" class="form-control" name="password" id="inputPassword3" placeholder="Password">
                                         <label for="inputPassword3">Password</label>
                                     </div>
                                 </div>

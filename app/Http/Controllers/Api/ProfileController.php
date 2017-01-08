@@ -6,6 +6,7 @@ use App\User;
 use Illuminate\Http\Request;
 use App\Http\Controllers\Controller;
 use Illuminate\Support\Facades\Auth;
+use Illuminate\Support\Facades\Redirect;
 
 class ProfileController extends Controller
 {
@@ -48,10 +49,14 @@ class ProfileController extends Controller
     {
         $this->validate($request,[
             'name' => 'required',
-            'email' => 'required',
+            'email' => 'required|email',
         ]);
         $edit = User::find($id)->update($request->all());
-        return response()->json($edit);
+        if($edit)
+            return Redirect::back()->with('success','Profil Resminiz Başarıyla Değiştirildi.');
+        else
+            return Redirect::back()->with('errors','Hata Oluştu');
+
 
     }
 
